@@ -1,3 +1,4 @@
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 @font-face {
@@ -5,19 +6,26 @@
   src: url(https://www.lunarclient.com/assets/fonts/Panton-BlackCaps.woff2);
 }
 
-.header {
- width: 100%;
- height: 15%;
- position: absolute;
- top: 0;
- left: 0;
- background-color: rgba(9,4,0,.45);
+li {
+ font-family: 'Roboto';
 }
 
 body {
  background-color: #121212;
  background-repeat: no-repeat;
  background-size: 120%;
+}
+
+button {
+ cursor: pointer;
+}
+
+.download:hover {
+ background-color: #2C90DA;
+}
+
+.store:hover {
+ background-color: #2CC4DA;
 }
 
 h1 {
@@ -39,16 +47,6 @@ h3 {
  font-family: 'Roboto', sans-serif;
 }
 
-.column {
- float: left;
- padding: 20px;
-}
-
-.column2 {
- float: right;
- padding: 20px;
-}
-
 .download {
  background-color: #2C97E6;
  border: 1px solid #2C97E6;
@@ -67,4 +65,135 @@ h3 {
  padding: 10px;
  width: 15%;
  font-family: 'Panton';
+}
+
+nav {
+    background: rgba(9,4,0,.45);
+    color: #FFFFFF;
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/*** INPUT ***/
+nav input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/*** LABEL ***/
+nav label {
+    cursor: pointer;
+    display: block;
+    font: 2em/1 'Oswald', sans-serif;
+    padding: 0.5em;
+}
+
+/* Hamburger Icon */
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+    background: #FFFFFF;
+    border-radius: 0.05em;
+    height: 0.2em;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+#menu-icon {
+    display: inline-block;
+    margin: 0.4em 0;
+    max-width: 1em;
+    position: relative;
+}
+
+nav label #menu-icon {
+    float: right;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+    content: '';
+    left: 0;
+    position: absolute;
+}
+
+#menu-icon:before {
+    top: -0.4em;
+}
+
+#menu-icon:after {
+    bottom: -0.4em;
+}
+
+/* Close Icon */
+nav input[type=checkbox]:checked + label #menu-icon {
+    background: transparent;
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+
+/*** MENU ***/
+/* Overlay */
+nav input:checked ~ #overlay {
+    background: #151515;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+}
+
+/* List */
+nav ul {
+    font-size: 1.5em;
+    list-style: none;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+nav input:checked ~ ul {
+    margin: 1em;
+    max-height: inherit;
+    opacity: 1;
+}
+
+nav ul > li {
+    margin: 0.5em 0;
+}
+
+nav ul a {
+    color: white!important;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media */
+nav ul#social-media > li {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0.5em;
 }
