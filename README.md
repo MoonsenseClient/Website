@@ -6,4 +6,5 @@ Files from the site. We say thanks to:
 # Notes
 + This is a fanmade version!! Made with my own knowledgement.
 + It stills in development, so it can get some bugs/glitches.
++ For other devs: please do not modify these files.
 
